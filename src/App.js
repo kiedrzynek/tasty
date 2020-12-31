@@ -42,7 +42,8 @@ const App = () => {
         <Recipe 
           key={index}
           title={recipe.recipe.label} 
-          calories={recipe.recipe.calories} 
+          calories={recipe.recipe.calories.toFixed()}
+          digest={recipe.recipe.digest}
           image={recipe.recipe.image}
           ingredients={recipe.recipe.ingredients}
         />

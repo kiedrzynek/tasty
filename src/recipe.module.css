@@ -1,0 +1,25 @@
+
+.digest {
+    list-style-type: none;
+    max-width: 100vw;
+    padding: 0;
+}
+
+.open {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.calories {
+    font-size: .75rem;
+}
+
+.ingredients {
+    list-style-position: inside;
+    margin: 0 auto;
+    padding: 0;
+}
+

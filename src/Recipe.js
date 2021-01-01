@@ -22,7 +22,7 @@ const Recipe = ({title, calories, digest, image, ingredients}) => {
                 {digest.map((digest, index) => (
                     <li key={index}>
                         {digest.label}:&nbsp;
-                        {digest.total.toFixed()}
+                        {digest.total.toFixed()} {digest.unit}
                     </li>  
                 ))}
             </ul>

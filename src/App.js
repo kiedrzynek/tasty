@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe';
+import useLoader from './hooks/useLoader';
 import './App.css';
 
 const App = () => {
@@ -11,13 +12,17 @@ const App = () => {
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('chicken');
 
+  const [loader, showLoader, hideLoader] = useLoader();
+
   useEffect(() => {
     getRecipes();
   }, [query]);
 
   const getRecipes = async() => {
+    showLoader();
     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
+    hideLoader();
     setRecipes(data.hits);
     console.log(data.hits);
   }
@@ -48,6 +53,7 @@ const App = () => {
           ingredients={recipe.recipe.ingredients}
         />
       ))}
+      {loader}
     </div>
   );
 }

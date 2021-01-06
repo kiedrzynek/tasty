@@ -1,0 +1,59 @@
+.mainNav {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.navItem {
+    min-width: 225px;
+}
+
+.searchForm {
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.searchBtn {
+    border: none;
+    background: none;
+    vertical-align: middle;
+}
+
+.searchBar {
+    border: 1px solid lightgray;
+    border-radius: 50px;
+    background-color: white;
+    padding: 0 10px;
+}
+
+.searchInput {
+    border: none;
+    outline: none;
+    line-height: 40px;
+    border-radius: 50px;
+    min-width: 240px;
+}
+
+.open {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.black {
+    fill: #000;
+}
+
+.orange {
+    fill: #f86600;
+}

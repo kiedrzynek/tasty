@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe';
 import useLoader from './hooks/useLoader';
+import Menu from './components/Menu'
 import './App.css';
 
 const App = () => {
@@ -28,9 +29,9 @@ const App = () => {
   }
 
   const updateSearch = e => {
-    setSearch(e.target.value);
-  }
-
+      setSearch(e.target.value);
+    }
+  
   const getSearch = e => {
     e.preventDefault();
     setQuery(search);
@@ -39,10 +40,7 @@ const App = () => {
 
   return(
     <div className="App">
-      <form className="search-form" onSubmit={getSearch}>
-        <input type="text" className="search-bar" value={search} onChange={updateSearch} />
-        <button type="submit" className="search-button">Search</button>
-      </form>
+      <Menu search={search} getSearch={getSearch} updateSearch={updateSearch}/>
       {recipes.map((recipe, index) => (
         <Recipe 
           key={index}
@@ -53,7 +51,7 @@ const App = () => {
           ingredients={recipe.recipe.ingredients}
         />
       ))}
-      {loader}
+      {/* {loader} */}
     </div>
   );
 }
